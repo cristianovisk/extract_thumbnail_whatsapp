@@ -9,3 +9,5 @@ Sistema baseado em Linux
 BASH
 
 SQLite3
+
+https://www.youtube.com/watch?v=lEM2EJXnM3U
