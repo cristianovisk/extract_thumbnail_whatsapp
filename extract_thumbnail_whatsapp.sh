@@ -54,7 +54,7 @@ function extract {
         mv /tmp/img.jpg $OUTPUT/$(md5sum /tmp/img.jpg | cut -d " " -f 1).jpg 2> /dev/null;
     done
     clear
-    echo "FORAM EXTRAIDOS ${GREEN}$count${NC} ARQUIVOS DE IMAGEM EM $OUTPUT"
+    echo -e "FORAM EXTRAIDOS ${GREEN}$count${NC} ARQUIVOS DE IMAGEM EM $OUTPUT"
     sleep 5
     exit
 }
