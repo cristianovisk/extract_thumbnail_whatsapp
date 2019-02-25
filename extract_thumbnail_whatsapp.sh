@@ -1,4 +1,5 @@
 #!/bin/bash
+#date -d @1488622268 +"%a_%d_%b_%Y_UTC_%H_%M_UTC_%:::z"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
@@ -45,13 +46,13 @@ function menu {
 function extract {
     count=0
     total=$(sqlite3 $DB "SELECT count(thumbnail) FROM message_thumbnails")
-    for i in `sqlite3 $DB "SELECT quote(thumbnail) FROM message_thumbnails" | cut -d\' -f2`;
+    for i in `sqlite3 $DB "SELECT quote(thumbnail), timestamp FROM message_thumbnails"`;
     do 
         clear
         let "count++"
         echo -e "Extraindo ${RED}$count ${NC}de ${GREEN}$total ${NC}arquivos"
-        printf $i | xxd -r -p > /tmp/img.jpg 
-        mv /tmp/img.jpg $OUTPUT/$(md5sum /tmp/img.jpg | cut -d " " -f 1).jpg 2> /dev/null;
+        printf $i | cut -d\' -f2 | xxd -r -p > /tmp/img.jpg 
+        mv /tmp/img.jpg $OUTPUT/$(md5sum /tmp/img.jpg | cut -d " " -f 1)_$(date -d @$(echo $i | cut -d "|" -f 2) +"%a_%d_%b_%Y_UTC_%H_%M_UTC_%:::z").jpg 2> /dev/null;
     done
     clear
     echo -e "FORAM EXTRAIDOS ${GREEN}$count${NC} ARQUIVOS DE IMAGEM EM $OUTPUT"
