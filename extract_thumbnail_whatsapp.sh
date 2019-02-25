@@ -60,8 +60,8 @@ function extract {
 }
 menu
 #### CONDICIONAIS MENU ####
-if [ $item -eq 1 ] ; then echo "Digite o diretorio do arquivo desejado: "; read DB; menu; fi
-if [ $item -eq 2 ] ; then echo "Digite o diretorio de saida desejado: "; read OUTPUT; menu; fi
+if [ $item -eq 1 ] ; then echo "Digite o diretorio do arquivo desejado: "; read DB; clear; menu; fi
+if [ $item -eq 2 ] ; then echo "Digite o diretorio de saida desejado: "; read OUTPUT; clear; menu; fi
 if [ $item -eq 4 ] ; then exit; fi
 if [ $item -eq 3 ];
 then
