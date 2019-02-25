@@ -1,5 +1,4 @@
 #!/bin/bash
-#date -d @1488622268 +"%a_%d_%b_%Y_UTC_%H_%M_UTC_%:::z"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
@@ -52,7 +51,7 @@ function extract {
         let "count++"
         echo -e "Extraindo ${RED}$count ${NC}de ${GREEN}$total ${NC}arquivos"
         printf $i | cut -d\' -f2 | xxd -r -p > /tmp/img.jpg 
-        mv /tmp/img.jpg $OUTPUT/$(md5sum /tmp/img.jpg | cut -d " " -f 1)_$(date -d @$(echo $i | cut -d "|" -f 2) +"%a_%d_%b_%Y_UTC_%H_%M_UTC_%:::z").jpg 2> /dev/null;
+        mv /tmp/img.jpg $OUTPUT/$(md5sum /tmp/img.jpg | cut -d " " -f 1)_$(date -d @$(echo $i | cut -d "|" -f 2) +"%a_%d_%b_%Y_%H_%M_UTC_%:::z").jpg 2> /dev/null;
     done
     clear
     echo -e "FORAM EXTRAIDOS ${GREEN}$count${NC} ARQUIVOS DE IMAGEM EM $OUTPUT"
