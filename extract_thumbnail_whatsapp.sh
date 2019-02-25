@@ -4,6 +4,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 OUTPUT="$PWD/output"
 DB="/DEFINIR_LOCAL_DO_BANCO"
+if [ -f /usr/bin/sqlite3 ]; then clear;echo "---Pacotes necessários instalados.---" && sleep 2; else clear;echo "---SQLite3 não instalado--- Instalando..." && sudo apt install sqlite3 -y;fi
 function check {
     if [ -f `which sqlite3` ]; then
         clear
