@@ -1,0 +1,27 @@
+{
+  "version": "2.3.0",
+  "summary": {
+    "title": "TEste",
+    "owner": "Cristiano Henrique - MAT",
+    "description": "",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Tempering",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.3.0",
+        "cells": [],
+        "description": "De acordo com o modelo descrito pode haver a  vulnerabilidade do CAPEC-226"
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "teste",
+    "threatTop": 0
+  }
+}
